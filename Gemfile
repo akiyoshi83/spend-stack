@@ -44,6 +44,7 @@ group :development, :test do
 end
 
 gem 'slim-rails'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
