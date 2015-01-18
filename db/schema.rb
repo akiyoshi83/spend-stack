@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118090136) do
+ActiveRecord::Schema.define(version: 20150118090148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20150118090136) do
   add_index "categories", ["user_id", "name"], name: "index_categories_on_user_id_and_name", using: :btree
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
+  create_table "trades", force: :cascade do |t|
+    t.integer  "amount",      null: false
+    t.datetime "trade_at",    null: false
+    t.text     "memo"
+    t.integer  "user_id",     null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "trades", ["category_id"], name: "index_trades_on_category_id", using: :btree
+  add_index "trades", ["user_id"], name: "index_trades_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -38,4 +51,6 @@ ActiveRecord::Schema.define(version: 20150118090136) do
   end
 
   add_foreign_key "categories", "users"
+  add_foreign_key "trades", "categories"
+  add_foreign_key "trades", "users"
 end

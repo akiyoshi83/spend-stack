@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :trades
   has_many :categories
 
   def self.create_with_omniauth(auth)
