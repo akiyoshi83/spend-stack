@@ -16,6 +16,6 @@ html
             = current_user.nickname
           = link_to 'Sign out', signout_path, :class => 'signout'
       - else
-        = link_to 'Sign in with Twitter', '/auth/twitter', :class => 'signin'
+        = link_to 'Sign in with Twitter', twitter_login, :class => 'signin'
 
     = yield
