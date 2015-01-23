@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :trade do
-    amount 3000
-    trade_at "2015-01-01 12:00:00"
-    memo "some books"
-    #user
-    #category
+    amount 1
+trade_at "2015-01-18 18:01:48"
+memo "MyText"
+user nil
+category nil
   end
 
 end
