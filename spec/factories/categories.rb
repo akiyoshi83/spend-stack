@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :category do
-    name "MyString"
-order 1
-color "MyString"
-user nil
+    sequence(:name) { |n| "category#{n}}" }
+    color "#abcdef"
+    user
   end
 
 end
