@@ -27,7 +27,6 @@ module Api
       private
 
       def trade_params
-        logger.debug params
         params.require(:trade).permit(:amount, :trade_at, :memo, :category_id)
       end
 
