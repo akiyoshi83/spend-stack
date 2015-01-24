@@ -1,7 +1,7 @@
 module Api
   module V1
     class TradesController < ApplicationController
-      before_action :set_trade, only: [:edit, :update, :destroy]
+      before_action :set_trade, only: [:update, :destroy]
 
       def index
         @trades = current_user.trades || []
