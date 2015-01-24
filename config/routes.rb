@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, format: :json do
     namespace :v1 do
+      resources :categories, format: 'json', only: [:index, :create, :update, :destroy]
       resources :trades,     format: 'json', only: [:index, :create, :update, :destroy]
     end
   end
