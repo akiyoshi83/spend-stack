@@ -48,7 +48,7 @@ gem 'omniauth-twitter'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
