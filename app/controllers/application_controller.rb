@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def authenticate_api
+    render json: { error: 'not logged in' }, status: 400 if current_user.nil?
+  end
+
   private
 
   def error_render

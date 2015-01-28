@@ -1,6 +1,7 @@
 module Api
   module V1
     class TradesController < ApplicationController
+      before_action :authenticate_api
       before_action :set_trade, only: [:update, :destroy]
 
       def index
